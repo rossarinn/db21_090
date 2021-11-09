@@ -1,31 +1,38 @@
+<?php
 
-<?php class Person{
-     public $PS_id;
-     public $PS_name;
-     public $PS_add;
-     
+class Person
+
+{
+
+    public $PS_id,$PS_name,$PS_add;
     public function __construct($PS_id,$PS_name,$PS_add)
     {
         $this->PS_id = $PS_id;
         $this->PS_name = $PS_name;
         $this->PS_add = $PS_add;
-        
+
     }
+
     public static function getAll()
+
     {
-        $PersonList=[];
+        $PersonList = [];
         require("connect_database.php");
-        $sql="SELECT * FROM Person INNER JOIN Person ON Person.PS_id = Person.PS_id";
-        $result=$conn->query($sql);
-        while($my_row=$result->fetch_assoc())
-        {
+        $sql = "SELECT * FROM Person";
+        $result = $conn->query($sql);
+
+        while ($my_row = $result->fetch_assoc()) {
+
             $PS_id = $my_row[PS_id];
             $PS_name = $my_row[PS_name];
             $PS_add = $my_row[PS_add];
-            
+
             $PersonList[] = new Person($PS_id,$PS_name,$PS_add);
+
         }
+
         require("connection_close.php");
+
         return $PersonList;
 
     }
@@ -86,7 +93,7 @@
     }
 
 
-    public static function Update($PS_id,$PS_name,$PS_add,$oldid)
+    public static function update($PS_id,$PS_name,$PS_add,$oldid)
      {
         require("connect_database.php");
         $sql="UPDATE `Person` SET `PS_id`='$PS_id',`PS_name`='$PS_name',
@@ -110,12 +117,4 @@
         return ;
 
     }
-
-
-
-
-
-
 }
-
-
