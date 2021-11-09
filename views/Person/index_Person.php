@@ -59,7 +59,7 @@ th {
         <th>UPDATE</th>
         <th>DELETE</th>
         
-<?php foreach($Person_List as $Person)
+<?php foreach($PersonList as $Person)
 {
         echo "<tr><td>$Person->PS_id</td>
         <td>$Person->PS_name</td>
