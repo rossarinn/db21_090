@@ -56,16 +56,18 @@ th {
         <th>ID </th>
         <th>NAME</th>
         <th>ADDRESS</th>
+        <th>UPDATE</th>
+        <th>DELETE</th>
         
 <?php foreach($Person_List as $Person)
 {
-        echo "<tr><td>$Person->id_Person</td>
-        <td>$Person->date</td>
-        <td>$Person->condition</td>
+        echo "<tr><td>$Person->PS_id</td>
+        <td>$Person->PS_name</td>
+        <td>$Person->PS_add</td>
         
        
-        <td><a href=?controller=Person&action=updatefrom&id_Person=$Person->id_Person>Update</a></td>
-        <td><a href=?controller=Person&action=deleteConfrom&id_Person=$Person->id_Person>Delete</a></td>
+        <td><a href=?controller=Person&action=updatefrom&id_Person=$Person->PS_id>Update</a></td>
+        <td><a href=?controller=Person&action=deleteConfrom&id_Person=$Person->PS_id>Delete</a></td>
         
         </tr>";
 
