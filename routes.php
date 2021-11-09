@@ -1,7 +1,6 @@
 <?php
 $controllers = array('pages'=>['home','error'],
-                        'Person'=>['index','newPerson','search','addPerson','delete','deleteConfrom','updateFrom','update'],
-                        );
+                      'Person'=>['index','newPerson','search','addPerson','delete','deleteConfrom','updateFrom','update']);
 
 function call($controller,$action){
     require_once("./controllers/".$controller."_controller.php");
@@ -11,14 +10,10 @@ function call($controller,$action){
         case "pages":    $controller = new PagesController();
                         break;
 
-        case "Person":   require_once("./models/Person.php");
-                        
-                        $controller = new PersonController();
+        case "Person":  $controller = new PersonController();
+                        require_once("./models/Person.php");
+                        echo "hah1253";
                         break;
-                        
-        
-
-
     }
     $controller->{$action}();
 
