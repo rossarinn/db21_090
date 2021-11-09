@@ -5,14 +5,14 @@
         $Person_List=Person::getAll();
         require_once("./views/Person/index_Person.php");
     }
-    public function newdetailOrder(){
+    public function newPerson(){
         
-        $customerList = customer::getAll();
+        $PatientFinalresultList = PatientFinalresult::getAll();
         $staffList = staff::getAll();
         $colorproductList = colorproduct::getAll();
         $productList = product::getAll();
         $orderList = Order::getAll();
-        require_once('./views/detailOrder/newdetailOrder.php');
+        require_once('./views/Person/newPerson.php');
     }
     public function addPerson()
     {
