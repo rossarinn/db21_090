@@ -19,7 +19,7 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 18px;
     margin: 4px 2px;
     cursor: pointer;
 }
@@ -28,16 +28,16 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
     <br>
     <br>
     <br>
-    <h2><center><font size = "10" >Premiumshop</font></center></h2>
+    <h2><center><font size = "10" >ATK project</font></center></h2>
     </head> 
       <body>
         <p align = "center">
 
-     <a class="button" href="http://158.108.207.4/db21/">ปล่อยมันไป อย่างที่เป็น~~~</a>
+     <a class="button" href="http://158.108.207.4/db21/">กลับๆๆ</a>
      <a class="button" href="?controller=pages&action=home">HOME</a>
-     <a class="button" href="?controller=order&action=index">ORDER</a>
-     <a class="button" href="?controller=detailOrder&action=index">DETAIL ORDER</a>
-     
+     <a class="button" href="?controller=Person&action=index">Person</a>
+     <a class="button" href="?controller=Queue&action=index">Queue</a>
+     <a class="button" href="?controller=ATK&action=index">ผลตรวตATK</a>
         </p> 
        
         <?php require_once("./routes.php");?>
