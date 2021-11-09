@@ -7,11 +7,7 @@
     }
     public function newPerson(){
         
-        $PatientFinalresultList = PatientFinalresult::getAll();
-        $staffList = staff::getAll();
-        $colorproductList = colorproduct::getAll();
-        $productList = product::getAll();
-        $orderList = Order::getAll();
+        $PersonList = Person::getAll();
         require_once('./views/Person/newPerson.php');
     }
     public function addPerson()
@@ -34,12 +30,7 @@
     public function updateFrom()
     {
         $id = $_GET['PS_id'];
-        $detailOrder = detailOrder::get($id);
-        $customerList = customer::getAll();
-        $staffList = staff::getAll();
-        $colorproductList = colorproduct::getAll();
-        $productList = product::getAll();
-        $orderList = Order::getAll();
+        $PersonList = Person::getAll();
         
         require_once("./views/Person/updatefrom.php");
     }
@@ -57,19 +48,14 @@
     public function deleteConFrom()
     {
         $id = $_GET['PS_id'];
-        $detailOrder = detailOrder::get($id);
-        $customerList = customer::getAll();
-        $staffList = staff::getAll();
-        $colorproductList = colorproduct::getAll();
-        $productList = product::getAll();
-        $orderList = Order::getAll();
+        $PersonList = Person::getAll();
         require_once("./views/Person/deleteConfrom.php");
     }
     public function delete()
 
     {
 
-        $id=$_GET['no_id'];
+        $id=$_GET['PS_id'];
         echo $id;
         detailOrder::delete($id);
 
