@@ -2,7 +2,7 @@
     public function index()
     {
       
-        $Person_List=Person::getAll();
+        $Person_List = Person::getAll();
         require_once("./views/Person/index_Person.php");
     }
     public function newPerson(){
@@ -45,7 +45,7 @@
         PersonController::index();
         
     }
-    public function deleteConFrom()
+    public function deleteConfrom()
     {
         $id = $_GET['PS_id'];
         $PersonList = Person::getAll();
@@ -57,9 +57,9 @@
 
         $id=$_GET['PS_id'];
         echo $id;
-        detailOrder::delete($id);
+        Person::delete($id);
 
-        detailOrderController::index();
+        PersonController::index();
 
     }
 
