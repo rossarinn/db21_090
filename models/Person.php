@@ -111,7 +111,6 @@ class Person
         $sql = "DELETE FROM Person WHERE PS_id = '$id'";
 
         $result = $conn->query($sql);
-        echo "4444";
         require("connection_close.php");
 
         return ;
