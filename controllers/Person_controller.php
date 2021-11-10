@@ -1,4 +1,5 @@
-<?php class PersonController{
+<?php
+ class PersonController{
     public function index()
     {
       
