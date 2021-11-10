@@ -22,7 +22,7 @@ class Atk
     {
         $AtkList = [];
         require("connect_database.php");
-        $sql = "SELECT * FROM AtkTestResult";
+        $sql = "SELECT * FROM `AtkTestResult`";
         $result = $conn->query($sql);
 
         while ($my_row = $result->fetch_assoc()) {
@@ -67,7 +67,7 @@ class Atk
     {
         $AtkList=[];
         require("connect_database.php");
-        $sql="SELECT * FROM AtkTestResult  WHERE ( ATR_TestResult like '%$key%' or ATR_id like '%$key%' or ATR_color like '%$key%'
+        $sql="SELECT * FROM `AtkTestResult`  WHERE ( ATR_TestResult like '%$key%' or ATR_id like '%$key%' or ATR_color like '%$key%'
         or ATR_date like '%$key%' or ATR_time like '%$key%' or ATR_symptom like '%$key%' or Q_id like '%$key%')";
         $result=$conn->query($sql);
         while($my_row=$result->fetch_assoc())
@@ -91,7 +91,7 @@ class Atk
     {
         
         require("connect_database.php");
-        $sql="SELECT * FROM AtkTestResult WHERE ATR_id='$id'";
+        $sql="SELECT * FROM `AtkTestResult` WHERE ATR_id='$id'";
         $result=$conn->query($sql);
         $my_row=$result->fetch_assoc();
         
@@ -126,7 +126,7 @@ class Atk
         
         require("connect_database.php");
 
-        $sql = "DELETE FROM AtkTestResult WHERE ATR_id = '$id'";
+        $sql = "DELETE FROM `AtkTestResult` WHERE ATR_id = '$id'";
 
         $result = $conn->query($sql);
         require("connection_close.php");
