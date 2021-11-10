@@ -12,7 +12,7 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
 <html>
 <style>
 .button {
-    background-color: #000000;
+    background-color: #808080;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -24,7 +24,7 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
     cursor: pointer;
 }
 </style>
-    <head color = "#000000">
+    <head color = "#FFFFF0">
     <br>
     <br>
     <br>
