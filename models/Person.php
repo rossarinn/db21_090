@@ -58,7 +58,7 @@ class Person
     {
         $PersonList=[];
         require("connect_database.php");
-        $sql="SELECT * FROM Person  WHERE ( PS_id like '%$key%')";
+        $sql="SELECT * FROM Person  WHERE ( PS_id like '%$key%' or PS_name like '%$key%' or PS_add like '%$key%')";
         $result=$conn->query($sql);
         while($my_row=$result->fetch_assoc())
         {
@@ -77,7 +77,7 @@ class Person
     {
         
         require("connect_database.php");
-        $sql="SELECT * FROM Person  INNER JOIN Person ON Person.PS_id = Person.PS_id WHERE PS_id='$id'";
+        $sql="SELECT * FROM Person WHERE PS_id='$id'";
         $result=$conn->query($sql);
         $my_row=$result->fetch_assoc();
         
@@ -102,16 +102,16 @@ class Person
         require("connection_close.php");
         return ;
      }
+
     public static function delete($id)
-
     {
-
+        
         require("connect_database.php");
 
         $sql = "DELETE FROM Person WHERE PS_id = '$id'";
 
         $result = $conn->query($sql);
-
+        echo "4444";
         require("connection_close.php");
 
         return ;
