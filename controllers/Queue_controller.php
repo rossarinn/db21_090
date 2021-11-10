@@ -9,6 +9,7 @@
     public function newQueue(){
         
       $QueueList = Queue::getAll();
+      $PersonList = Person::getAll();
       require_once('./views/Queue/newQueue.php');
   }
   public function addQueue()
