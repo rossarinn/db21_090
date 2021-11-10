@@ -53,21 +53,28 @@ th {
     
 
     <br><tr>
-        <th>ID </th>
-        <th>NAME</th>
-        <th>ADDRESS</th>
+        <th>ผลตรวจ</th>
+        <th>ID</th>
+        <th>เกณฑ์สี</th>
+        <th>DATE</th>
+        <th>TIME</th>
+        <th>SYMPTOM</th>
+        <th>Q_ID</th>
         <th>UPDATE</th>
         <th>DELETE</th>
         
 <?php foreach($AtkList as $Atk)
 {
-        echo "<tr><td>$Atk->PS_id</td>
-        <td>$Atk->PS_name</td>
-        <td>$Atk->PS_add</td>
-        
+        echo "<tr><td>$Atk->ATR_TestResult</td>
+        <td>$Atk->ATR_id</td>
+        <td>$Atk->ATR_color</td>
+        <td>$Atk->ATR_date</td>
+        <td>$Atk->ATR_time</td>
+        <td>$Atk->ATR_symptom</td>
+        <td>$Atk->Q_id</td>
        
-        <td><a href=?controller=Atk&action=updateFrom&PS_id=$Atk->PS_id>Update</a></td>
-        <td><a href=?controller=Atk&action=deleteConfrom&PS_id=$Atk->PS_id>Delete</a></td>
+        <td><a href=?controller=Atk&action=updateFrom&PS_id=$Atk->ATR_id>Update</a></td>
+        <td><a href=?controller=Atk&action=deleteConfrom&PS_id=$Atk->ATR_id>Delete</a></td>
         
         </tr>";
 
