@@ -3,7 +3,6 @@ class AtkController{
     public function index()
     {
        $AtkList = Atk::getAll();
-       echo "66666";
         require_once("./views/Atk/index_Atk.php");
     }
     public function newAtk(){
