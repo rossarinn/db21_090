@@ -29,6 +29,7 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
     <br>
     <br>
     <h2><center><font size = "10" >ATK project</font></center></h2>
+    <h2><center><font size = "2" > ส่วนที่ 3 </font></center></h2>
     </head> 
       <body>
         <p align = "center">
