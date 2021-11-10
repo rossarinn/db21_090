@@ -66,8 +66,8 @@ th {
         <td>$Person->PS_add</td>
         
        
-        <td><a href=?controller=Person&action=updatefrom&id_Person=$Person->PS_id>Update</a></td>
-        <td><a href=?controller=Person&action=deleteConfrom&id_Person=$Person->PS_id>Delete</a></td>
+        <td><a href=?controller=Person&action=updateFrom&PS_id=$Person->PS_id>Update</a></td>
+        <td><a href=?controller=Person&action=deleteConfrom&PS_id=$Person->PS_id>Delete</a></td>
         
         </tr>";
 
