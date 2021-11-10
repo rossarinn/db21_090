@@ -82,9 +82,7 @@ echo "</table>";
 
 
 
-</body>
-<br>
-<br>
+
 
 </html>
 
