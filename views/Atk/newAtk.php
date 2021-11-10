@@ -1,13 +1,13 @@
 <form method = "GET" action = "">
 
-<center><label>ผลตรวจ   <select name="ATR_id">
+<center><label>ผลตรวจ   <select name="ATR_TestResult">
     <?php foreach($AtkList as $s)
     {
-        echo "<option value=$s->ATR_id > $s->ATR_id</option>";
+        echo "<option value=$s->ATR_TestResult > $s->ATR_TestResult</option>";
     }?>
     </select></label><br><center>
 
-    <center><label>ID   <input type="text" name="PS_add"/></label><br><center>
+    <center><label>ID   <input type="text" name="ATR_id"/></label><br><center>
 
     <center><label>เกณฑ์สี   <select name="ATR_color">
     <?php foreach($AtkList as $p)
@@ -26,7 +26,7 @@
 
     <input type="hidden" name="controller" value="Atk"/><br>
     <center><button type="submit" name="action" value="index">Back</button>
-    <button type="submit" name="action" value="addPerson">Save</button><center>
+    <button type="submit" name="action" value="addAtk">Save</button><center>
 </form>
 
 
