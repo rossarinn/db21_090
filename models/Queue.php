@@ -19,7 +19,7 @@ class Queue
     {
         $QueueList = [];
         require("connect_database.php");
-        $sql = "SELECT * FROM Queue";
+        $sql = "SELECT * FROM `Queue`";
         $result = $conn->query($sql);
 
         while ($my_row = $result->fetch_assoc()) {
@@ -35,10 +35,10 @@ class Queue
 
         require("connection_close.php");
 
-        return $PersonList;
+        return $QueueList;
 
     }
-    public static function Add($PS_id,$PS_name,$PS_add)
+    public static function Add($Q_id,$Q_time,$PS_id,$SDP_ID)
 
     { 
 
@@ -46,7 +46,7 @@ class Queue
 
       
 
-       $sql = "INSERT INTO `Person` (`PS_id`, `PS_name`, `PS_add`) VALUES ('$PS_id','$PS_name','$PS_add')";
+       $sql = "INSERT INTO `Queue` (`Q_id`, `Q_time`, `PS_id`, `SDP_ID`) VALUES ('$Q_id','$Q_time','$PS_id','$SDP_ID')";
 
        $result = $conn->query($sql);
 
@@ -58,20 +58,21 @@ class Queue
 
     public static function search($key)
     {
-        $PersonList=[];
+        $QueueList=[];
         require("connect_database.php");
-        $sql="SELECT * FROM Person  WHERE ( PS_id like '%$key%' or PS_name like '%$key%' or PS_add like '%$key%')";
+        $sql="SELECT * FROM `Queue`  WHERE ( Q_id like '%$key%' or Q_time like '%$key%' or PS_id like '%$key%'or SDP_ID like '%$key%')";
         $result=$conn->query($sql);
         while($my_row=$result->fetch_assoc())
         {
+            $Q_id = $my_row[Q_id];
+            $Q_time = $my_row[Q_time];
             $PS_id = $my_row[PS_id];
-            $PS_name = $my_row[PS_name];
-            $PS_add = $my_row[PS_add];
-            
-            $PersonList[] = new Person($PS_id,$PS_name,$PS_add);
+            $SDP_ID = $my_row[SDP_ID];
+
+            $QueueList[] = new Queue($Q_id,$Q_time,$PS_id,$SDP_ID);
         }
         require("connection_close.php");
-        return $PersonList;
+        return $QueueList;
     }
 
 
@@ -79,27 +80,28 @@ class Queue
     {
         
         require("connect_database.php");
-        $sql="SELECT * FROM Person WHERE PS_id='$id'";
+        $sql="SELECT * FROM `Queue` WHERE Q_id='$id'";
         $result=$conn->query($sql);
         $my_row=$result->fetch_assoc();
         
         
+        $Q_id = $my_row[Q_id];
+        $Q_time = $my_row[Q_time];
         $PS_id = $my_row[PS_id];
-        $PS_name = $my_row[PS_name];
-        $PS_add = $my_row[PS_add];
+        $SDP_ID = $my_row[SDP_ID];
            
         
         require("connection_close.php");
-        return new Person($PS_id,$PS_name,$PS_add);
+        return new Queue($Q_id,$Q_time,$PS_id,$SDP_ID);
 
     }
 
 
-    public static function update($PS_id,$PS_name,$PS_add,$oldid)
+    public static function update($Q_id,$Q_time,$PS_id,$SDP_ID,$oldid)
      {
         require("connect_database.php");
-        $sql="UPDATE `Person` SET `PS_id`='$PS_id',`PS_name`='$PS_name',
-        `PS_add`='$PS_add' WHERE PS_id = '$oldid'";
+        $sql="UPDATE `Queue` SET `Q_id`='$Q_id',`Q_time`='$Q_time',
+        `PS_id`='$PS_id',`SDP_ID`='$SDP_ID' WHERE Q_id = '$oldid'";
         $result=$conn->query($sql);
         require("connection_close.php");
         return ;
@@ -110,7 +112,7 @@ class Queue
         
         require("connect_database.php");
 
-        $sql = "DELETE FROM Person WHERE PS_id = '$id'";
+        $sql = "DELETE FROM `Queue` WHERE Q_id = '$id'";
 
         $result = $conn->query($sql);
         require("connection_close.php");
