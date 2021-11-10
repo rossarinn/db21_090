@@ -12,7 +12,7 @@ function call($controller,$action){
 
         case "Person":  $controller = new PersonController();
                         require_once("./models/Person.php");
-                        echo "hah1253";
+                        
                         break;
     }
     $controller->{$action}();
