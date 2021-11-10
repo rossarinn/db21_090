@@ -24,13 +24,13 @@
   public function search()
   {
       $key = $_GET['key'];
-      $Person_List = Person::search($key);
+      $PersonList = Person::search($key);
       require_once("./views/Person/index_Person.php");
   }
-  public function updatefrom()
+  public function updateFrom()
   {
       $id = $_GET['PS_id'];
-      $PersonList = Person::getAll();
+      $PersonList = Person::get($id);
       
       require_once("./views/Person/updatefrom.php");
   }
@@ -48,14 +48,12 @@
   public function deleteConfrom()
   {
       $id = $_GET['PS_id'];
-      $PersonList = Person::getAll();
+      $PersonList = Person::get($id);
       require_once("./views/Person/deleteConfrom.php");
   }
   public function delete()
-
   {
-
-      $id=$_GET['PS_id'];
+      $id = $_GET['PS_id'];
       echo $id;
       Person::delete($id);
 
