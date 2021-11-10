@@ -18,12 +18,12 @@ function call($controller,$action){
                         break;
 
         case "Atk":     require_once("./models/Atk.php");
-                        require_once("./models/Queue.php");
+                        //require_once("./models/Queue.php");
                         $controller = new AtkController();
                         
                         break;
                         
-        case "Queue":   require_once("./models/Atk.php");
+        case "Queue":   require_once("./models/Person.php");
                         require_once("./models/Queue.php");
                         $controller = new QueueController();
                         
