@@ -51,7 +51,7 @@ class Queue
        $result = $conn->query($sql);
 
        require("connection_close.php");
-
+       
        return  ;
 
     }
