@@ -38,7 +38,7 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
      <a class="button" href="?controller=pages&action=home">HOME</a>
      <a class="button" href="?controller=Person&action=index">Person</a>
      <a class="button" href="?controller=Queue&action=index">Queue</a>
-     <a class="button" href="?controller=ATK&action=index">ผลตรวตATK</a>
+     <a class="button" href="?controller=Atk&action=index">ผลตรวจATK</a>
         </p> 
        
         <?php require_once("./routes.php");?>
