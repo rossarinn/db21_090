@@ -1,7 +1,8 @@
 <?php
 $controllers = array('pages'=>['home','error'],
                       'Person'=>['index','newPerson','search','addPerson','delete','deleteConfrom','updateFrom','update'],
-                      'Atk'=>['index','newAtk','search','addAtk','delete','deleteConfrom','updateFrom','update']);
+                      'Atk'=>['index','newAtk','search','addAtk','delete','deleteConfrom','updateFrom','update'],
+                      'Queue'=>['index','newQueue','search','addQueue','delete','deleteConfrom','updateFrom','update']);
 
 function call($controller,$action){
     require_once("./controllers/".$controller."_controller.php");
@@ -11,13 +12,20 @@ function call($controller,$action){
         case "pages":   $controller = new PagesController();
                         break;
 
-        case "Person":  $controller = new PersonController();
-                        require_once("./models/Person.php");
+        case "Person":  require_once("./models/Person.php");
+                        $controller = new PersonController();
                         
                         break;
 
-        case "Atk":     $controller = new AtkController();
-                        require_once("./models/Atk.php");
+        case "Atk":     require_once("./models/Atk.php");
+                        require_once("./models/Queue.php");
+                        $controller = new AtkController();
+                        
+                        break;
+                        
+        case "Queue":   require_once("./models/Atk.php");
+                        require_once("./models/Queue.php");
+                        $controller = new QueueController();
                         
                         break;
 
