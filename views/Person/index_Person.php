@@ -15,7 +15,7 @@ th, td {
 }
 
 tr:nth-child(even){background-color: #D3D3D3}
-tr:hover {background-color: #cdcdcd}
+tr:hover {background-color: #FFFFFF}
 th {
     background-color: #808080;
     color: white;
@@ -37,7 +37,7 @@ th {
 }
 </style>
 </head>
-<body bgcolor = "#f0fff0"><center>
+<body bgcolor = "#FFFFF0"><center>
 
 <h2><center>PERSON</center></h2>
 
@@ -85,6 +85,6 @@ echo "</table>";
 </body>
 <br>
 <br>
-<center><font size = "4" color = "black">BY น.ส.รสริน เณรแตง 6220504763 </font></center>
+
 </html>
 
